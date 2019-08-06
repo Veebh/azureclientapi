@@ -42,7 +42,10 @@ namespace clientapplicationcorewebapi.Controllers
                         httpclient.DefaultRequestHeaders.Add("clientapplicationcorewebapi-" + key, val.ToString());
 
                     }
+                if (Request.Headers.ContainsKey("Authorization"))
+                {
                     httpclient.DefaultRequestHeaders.Add("X-MS-EndUserAuthorization", Request.Headers["Authorization"][0]);
+                }
 
                 
                 var azureServiceTokenProvider2 = new AzureServiceTokenProvider();
