@@ -57,6 +57,7 @@ namespace clientapplicationcorewebapi.Controllers
             }catch(Exception ex)
             {
                 content = ex.Message + ex.StackTrace;
+                return BadRequest(content);
             }
             return BadRequest(response.ReasonPhrase + Environment.NewLine + content + Environment.NewLine + accessToken);
 
