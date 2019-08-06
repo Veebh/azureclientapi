@@ -34,8 +34,7 @@ namespace clientapplicationcorewebapi.Controllers
                 });
 
                 var keyvalue = new List<KeyValuePair<string, string>>();
-                try
-                {
+                
                     foreach (var header in HttpContext.Request.Headers)
                     {
                         var key = header.Key;
@@ -45,11 +44,7 @@ namespace clientapplicationcorewebapi.Controllers
                     }
                     httpclient.DefaultRequestHeaders.Add("X-MS-EndUserAuthorization", Request.Headers["Authorization"][0]);
 
-                }
-                catch (Exception ex)
-                {
-                    httpclient.DefaultRequestHeaders.Add("clientapplicationcorewebapi-headers", ex.Message + ex.StackTrace);
-                }
+                
                 var azureServiceTokenProvider2 = new AzureServiceTokenProvider();
                 accessToken = await azureServiceTokenProvider2.GetAccessTokenAsync(targetUrl).ConfigureAwait(false);
                 httpclient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
