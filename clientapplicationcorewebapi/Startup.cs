@@ -30,6 +30,7 @@ namespace clientapplicationcorewebapi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddApplicationInsightsTelemetry();
             // The following will be picked up by Application Insights.
             _logger.LogInformation("Logging from ConfigureServices.");
             services.AddSwaggerGen(swaggerGenOptions =>
