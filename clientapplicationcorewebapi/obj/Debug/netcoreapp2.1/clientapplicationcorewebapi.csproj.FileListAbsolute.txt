@@ -1,0 +1,14 @@
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\bin\Debug\netcoreapp2.1\clientapplicationcorewebapi.deps.json
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\bin\Debug\netcoreapp2.1\clientapplicationcorewebapi.runtimeconfig.json
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\bin\Debug\netcoreapp2.1\clientapplicationcorewebapi.runtimeconfig.dev.json
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\bin\Debug\netcoreapp2.1\clientapplicationcorewebapi.dll
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\obj\Debug\netcoreapp2.1\clientapplicationcorewebapi.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\obj\Debug\netcoreapp2.1\clientapplicationcorewebapi.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\obj\Debug\netcoreapp2.1\clientapplicationcorewebapi.RazorAssemblyInfo.cache
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\obj\Debug\netcoreapp2.1\clientapplicationcorewebapi.RazorAssemblyInfo.cs
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\obj\Debug\netcoreapp2.1\clientapplicationcorewebapi.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\obj\Debug\netcoreapp2.1\clientapplicationcorewebapi.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\obj\Debug\netcoreapp2.1\clientapplicationcorewebapi.RazorTargetAssemblyInfo.cache
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\bin\Debug\netcoreapp2.1\clientapplicationcorewebapi.pdb
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\obj\Debug\netcoreapp2.1\clientapplicationcorewebapi.dll
+C:\Users\Administrator\source\repos\azureclientapplication\azureclientapi\clientapplicationcorewebapi\obj\Debug\netcoreapp2.1\clientapplicationcorewebapi.pdb

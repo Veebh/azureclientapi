@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Services.AppAuthentication;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace clientapplicationcorewebapi.Controllers
@@ -14,11 +15,23 @@ namespace clientapplicationcorewebapi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly ILogger _logger;
+        public ValuesController(ILogger<ValuesController> logger)
+        {
+            _logger = logger;
+        }
         string targetUrl = "https://webapitargetapplication.azurewebsites.net";
         // GET api/values
         [HttpGet]
         public async Task<ActionResult<string>> GetAsync()
         {
+            //All the following logs will be picked up by Application Insights.
+            // and all of them will have("MyKey", "MyValue") in Properties.
+            using (_logger.BeginScope(new Dictionary<string, object> { { "MyKey", "MyValue" } }))
+            {
+                _logger.LogWarning("clientapplicationcorewebapi: Client application test trace-->LogWarning.");
+                _logger.LogError("clientapplicationcorewebapi: Client application test trace-->LogError.");
+            }
             HttpResponseMessage response = null;
             string accessToken=string.Empty; string content = string.Empty;
             try
@@ -40,7 +53,6 @@ namespace clientapplicationcorewebapi.Controllers
                         var key = header.Key;
                         var val = header.Value;
                         httpclient.DefaultRequestHeaders.Add("clientapplicationcorewebapi-" + key, val.ToString());
-
                     }
                 if (Request.Headers.ContainsKey("Authorization"))
                 {

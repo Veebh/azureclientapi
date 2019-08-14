@@ -17,9 +17,11 @@ namespace clientapplicationcorewebapi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly ILogger _logger;
+        public Startup(IConfiguration configuration, ILogger<Startup> logger)
         {
             Configuration = configuration;
+            _logger = logger;
         }
 
         public IConfiguration Configuration { get; }
@@ -28,6 +30,8 @@ namespace clientapplicationcorewebapi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            // The following will be picked up by Application Insights.
+            _logger.LogInformation("Logging from ConfigureServices.");
             services.AddSwaggerGen(swaggerGenOptions =>
             {
                 swaggerGenOptions.SwaggerDoc("V1", new Swashbuckle.AspNetCore.Swagger.Info
@@ -55,7 +59,14 @@ namespace clientapplicationcorewebapi
         {
             if (env.IsDevelopment())
             {
+                // The following will be picked up by Application Insights.
+                _logger.LogInformation("Configuring for Development environment");
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                // The following will be picked up by Application Insights.
+                _logger.LogInformation("Configuring for Production environment");
             }
             app.UseSwagger();
             app.UseSwaggerUI(swaggerUiOptions =>
